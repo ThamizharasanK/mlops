@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: kserve-cluster
+  region: us-east-1
+  version: "1.29"
+
+managedNodeGroups:
+  - name: kserve-workers
+    instanceType: m5.2xlarge
+    desiredCapacity: 3
+    minSize: 3
+    maxSize: 6
+    volumeSize: 100
